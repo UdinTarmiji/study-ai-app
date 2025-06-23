@@ -15,7 +15,7 @@ model.fit(x, y)
 st.title('Study Score Predicted By AI')
 st.write("Enter how many hours you studied and get your predicted exam score.")
 
-hours = st.number_input('Hours_studied:", 0.0, 24.0, step=0.1)
+hours = st.number_input('Hours_studied:', 0.0, 24.0, step=0.1)
 
 if st.button('Predict):
     Prediction = model.predict([[hours]])
