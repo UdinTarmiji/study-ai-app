@@ -1,0 +1,22 @@
+import streamlit as st
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+
+#Load dataset
+data = pd.read_csv('study_scores.csv')
+
+#train model
+x = data[['Hours']]
+y = data[['Score']]
+model = LinearRegression()
+model.fit(x, y)
+
+# Streamlit UI
+st.title('Study Score Predicted By AI')
+st.write("Enter how many hours you studied and get your predicted exam score.")
+
+hours = st.number_input('Hours_studied:", 0.0, 24.0, step=0.1)
+
+if st.button('Predict):
+    Prediction = model.predict([[hours]])
+    st.success(f'Predicted score: {prediction[0]:.2f}')
