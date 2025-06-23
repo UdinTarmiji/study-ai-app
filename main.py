@@ -7,7 +7,7 @@ data = pd.read_csv('study_scores.csv')
 
 #train model
 x = data[['Hours']]
-y = data[['Score']]
+y = data['Score']
 model = LinearRegression()
 model.fit(x, y)
 
