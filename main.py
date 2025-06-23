@@ -23,7 +23,7 @@ if st.button('Predict'):
     
     st.success(f'Predicted score: {prediction[0]:.2f}')
 
-if score >== 85:
+if score >= 85:
     st.balloons()
     st.write("Great job! You're a study beast.")
 elif score >= 70:
