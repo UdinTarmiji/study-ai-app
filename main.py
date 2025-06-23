@@ -19,4 +19,16 @@ hours = st.number_input('Hours_studied:', 0.0, 24.0, step=0.1)
 
 if st.button('Predict'):
     prediction = model.predict([[hours]])
+    score = prediction[0]
+    
     st.success(f'Predicted score: {prediction[0]:.2f}')
+
+if score >== 85:
+    st.balloons()
+    st.write("Great job! You're a study beast.")
+elif score >= 70:
+    st.write("🧠 Nice! You're doing well.")
+ elif score >= 50:
+    st.write("📚 Keep studying — you're getting there!")
+ else:
+    st.write("😅 Try to study more next time.")
